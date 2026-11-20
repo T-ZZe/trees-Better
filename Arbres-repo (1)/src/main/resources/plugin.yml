@@ -1,0 +1,14 @@
+name: Arbres
+version: 1.6
+main: fr.arbres.ArbresPlugin
+api-version: "26.3"
+commands:
+  arbres:
+    description: Arbres stylés, rochers, champignons, End (admin)
+    usage: /arbres convert [rayon] | /arbres reload | /arbres pack
+    permission: arbres.admin
+    permission-message: "§cCette commande est réservée aux opérateurs."
+permissions:
+  arbres.admin:
+    description: Utiliser /arbres
+    default: op

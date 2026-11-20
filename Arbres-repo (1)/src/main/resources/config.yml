@@ -1,0 +1,87 @@
+# Mondes concernés (liste de noms). Vide = tous les mondes (overworld, Nether et End).
+worlds: []
+
+# Remplace automatiquement les arbres des NOUVEAUX chunks générés par les arbres stylés.
+replace-new-chunks: true
+
+# Les pousses (et la poudre d'os) font aussi pousser les arbres stylés.
+replace-saplings: true
+
+# Taille des arbres : 1.0 = taille normale du plugin, 1.3 = plus grands, 0.8 = plus petits.
+scale: 1.0
+
+rocks:
+  # Rochers avec minerais (charbon, fer, or) dans les plaines et les forêts.
+  enabled: true
+  # Probabilité qu'un chunk nouvellement généré ait un rocher (0.22 = environ 1 chunk sur 5).
+  chance: 0.22
+
+# Nettoyage autour des arbres : feuilles sans tronc (qui se cassent toutes seules), lianes / mousses dans le vide,
+# neige en l'air, troncs flottants. Fonctionne aussi avec /arbres convert sur les chunks existants.
+cleanup:
+  enabled: true
+  orphan-logs: true
+
+# Champignons géants stylés de l'île champignon (+ pousses à la poudre d'os).
+# Nether : nether-trees remplace les fungus par de gros arbres (un arbre qui touche le bord de la zone traitée est laissé tel quel),
+# et on ajoute des lianes, shroomlights et gouttes de verrues.
+mushrooms:
+  enabled: true
+  nether-trees: true
+
+# Palmiers sur les plages (probabilité par chunk).
+palms:
+  enabled: true
+  chance: 0.35
+
+# Grands pics de glace dans le biome des pics de glace.
+ice-spikes:
+  enabled: true
+  chance: 0.6            # probabilité par case de 18x18 blocs (espacés)
+  remove-vanilla: true   # supprime les pics de glace normaux : il ne reste que la version améliorée
+
+# Pics de pierre moussus au bord de l'eau (biomes dont le nom contient un des mots de la liste).
+stone-spikes:
+  enabled: true
+  chance: 0.4
+  biomes: [stony_shore, stony_peaks]
+
+# L'End : arbres sur les îles extérieures et tours d'obsidienne embellies sur l'île centrale.
+end:
+  trees: false           # arbres d'os sur les îles extérieures (désactivés)
+  tree-chance: 0.45
+  towers: true
+
+# Cœurs de creaking : chance qu'un arbre pâle reconverti en reçoive un (il en garde toujours un s'il en avait).
+pale:
+  heart-chance: 0.45
+
+# Forêt tachetée (dappled forest) : feuilles mortes, buissons rouges, terre stérile, peupliers tombés.
+dappled-forest:
+  enabled: true
+  chance: 0.9
+
+oasis:
+  # Petites oasis (étang, palmiers) dans les déserts et les mesas, parfois avec un campement et un coffre.
+  enabled: true
+  # Probabilité qu'un chunk de désert ou de mesa ait une oasis (0.04 = environ 1 chunk sur 25).
+  chance: 0.04
+  # Probabilité qu'une oasis ait un campement avec un coffre de ressources simples.
+  camp-chance: 0.4
+
+# Pack de textures (déjà intégré dans le plugin, rien à télécharger).
+# Le plugin l'héberge lui-même et l'envoie aux joueurs quand ils se connectent.
+resource-pack:
+  host:
+    enabled: true
+    # Port TCP utilisé pour distribuer le pack. Il doit être ouvert sur ton serveur
+    # (comme le port de Minecraft, mais celui-ci en plus).
+    port: 8123
+    # Adresse (IP ou nom de domaine) que tes joueurs utilisent pour se connecter au serveur,
+    # SANS le port. Exemple : play.monserveur.fr ou 123.45.67.89
+    address: ""
+  # Facultatif : adresse d'un pack hébergé ailleurs. Si elle est remplie, elle remplace l'hébergement intégré.
+  url: ""
+  sha1: ""
+  # true = les joueurs doivent accepter le pack pour jouer
+  force: false
